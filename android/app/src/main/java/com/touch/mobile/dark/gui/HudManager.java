@@ -93,7 +93,7 @@ public class HudManager {
 
         DecimalFormat formatter=new DecimalFormat();
         DecimalFormatSymbols symbols= DecimalFormatSymbols.getInstance(java.util.Locale.US);
-        symbols.setGroupingSeparator('.');
+        symbols.setGroupingSeparator(',');
         formatter.setDecimalFormatSymbols(symbols);
         hud_money.setText(formatter.format(money));
 
