@@ -36,7 +36,7 @@
         android:hardwareAccelerated="true"
         android:largeHeap="true"
         android:requestLegacyExternalStorage="true"
-        android:supportsRtl="false"
+        android:supportsRtl="true"
         android:theme="@style/BootTheme"
         android:usesCleartextTraffic="true"
         android:allowClearUserData="true" 
