@@ -54,6 +54,7 @@ public class MainGTA extends WarMedia {
         wantsAccelerometer = true;
         super.onCreate(bundle);
         Utils.currentContext = this;
+        AimFix.start(getExternalFilesDir(null));
     }
 
     public void onDestroy() {
