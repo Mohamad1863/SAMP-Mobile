@@ -92,31 +92,31 @@ public class HudManager {
         progressEat.setProgress(hunger);
 
         DecimalFormat formatter=new DecimalFormat();
-        DecimalFormatSymbols symbols= DecimalFormatSymbols.getInstance();
+        DecimalFormatSymbols symbols= DecimalFormatSymbols.getInstance(java.util.Locale.US);
         symbols.setGroupingSeparator('.');
         formatter.setDecimalFormatSymbols(symbols);
         hud_money.setText(formatter.format(money));
 
         if(checkX2 > 1) {
             hud_bonus_img.setVisibility(View.VISIBLE);
-            hud_bonus_text.setText(String.format("x%d", checkX2));
+            hud_bonus_text.setText(String.format(java.util.Locale.US, "x%d", checkX2));
         }
 
-        hud_name.setText(String.format("ID:%d %s", id, name));
+        hud_name.setText(String.format(java.util.Locale.US, "ID:%d %s", id, name));
 
         switch(weaponid) {
             case 16:
             case 17:
             case 18:
-                hud_ammo.setText(String.format("%d", ammo));
+                hud_ammo.setText(String.format(java.util.Locale.US, "%d", ammo));
                 break;
             case 22:
             case 23:
-                hud_ammo.setText(String.format("%d/%d", ammo + 17 - ammoinclip , ammoinclip));
+                hud_ammo.setText(String.format(java.util.Locale.US, "%d/%d", ammo + 17 - ammoinclip , ammoinclip));
                 break;
             case 27:
             case 24:
-                hud_ammo.setText(String.format("%d/%d", ammo + 7 - ammoinclip, ammoinclip));
+                hud_ammo.setText(String.format(java.util.Locale.US, "%d/%d", ammo + 7 - ammoinclip, ammoinclip));
                 break;
             case 25:
             case 33:
@@ -124,19 +124,19 @@ public class HudManager {
             case 35:
             case 36:
             case 39:
-                hud_ammo.setText(String.format("%d/%d", ammo, 1));
+                hud_ammo.setText(String.format(java.util.Locale.US, "%d/%d", ammo, 1));
                 break;
             case 26:
-                hud_ammo.setText(String.format("%d/%d", ammo + 2 - ammoinclip, ammoinclip));
+                hud_ammo.setText(String.format(java.util.Locale.US, "%d/%d", ammo + 2 - ammoinclip, ammoinclip));
                 break;
             case 29:
             case 30:
-                hud_ammo.setText(String.format("%d/%d", ammo + 30 - ammoinclip, ammoinclip));
+                hud_ammo.setText(String.format(java.util.Locale.US, "%d/%d", ammo + 30 - ammoinclip, ammoinclip));
                 break;
             case 28:
             case 32:
             case 31:
-                hud_ammo.setText(String.format("%d/%d", ammo + 50 - ammoinclip, ammoinclip));
+                hud_ammo.setText(String.format(java.util.Locale.US, "%d/%d", ammo + 50 - ammoinclip, ammoinclip));
                 break;
             case 37:
             case 38:
@@ -145,13 +145,13 @@ public class HudManager {
             case 43:
             case 44:
             case 45:
-                hud_ammo.setText(String.format("%d/%d", ammo + 366 - ammoinclip, ammoinclip));
+                hud_ammo.setText(String.format(java.util.Locale.US, "%d/%d", ammo + 366 - ammoinclip, ammoinclip));
                 break;
             default:
                 hud_ammo.setText(String.valueOf(' '));
         }
 
-        int d_id = activity.getResources().getIdentifier(new Formatter().format("weapon_%d", Integer.valueOf(weaponid)).toString(), "drawable", activity.getPackageName());
+        int d_id = activity.getResources().getIdentifier(new Formatter(java.util.Locale.US).format("weapon_%d", Integer.valueOf(weaponid)).toString(), "drawable", activity.getPackageName());
         hud_weapon.setImageResource(d_id);
 
         hud_weapon.setOnClickListener(v -> NvEventQueueActivity.getInstance().onWeaponChanged());
