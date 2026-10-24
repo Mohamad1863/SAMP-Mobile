@@ -24,7 +24,7 @@ public class ChooseServer {
 
     public void Update(int percent) {
         if (percent <= 100)
-            percentText.setText(new Formatter().format("%d%s", percent, "%").toString());
+            percentText.setText(new Formatter(java.util.Locale.US).format("%d%s", percent, "%").toString());
         else {
             Utils.HideLayout(serverLayout, true);
         }
