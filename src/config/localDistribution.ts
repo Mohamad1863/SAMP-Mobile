@@ -1,5 +1,5 @@
 import { DistributionResponse } from '../services/distribution.service';
-export const LOCAL_SERVER_ADDRESS = '100.96.176.53:7777';
+export const LOCAL_SERVER_ADDRESS = '100.73.50.29:7777';
 export const LOCAL_PACKAGE_NAME = 'com.touch.mobile.dark';
 export const LOCAL_PROJECT_NAME = 'Ariana Mobile';
 export const localDistribution: DistributionResponse = {
