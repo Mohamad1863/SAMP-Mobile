@@ -39,9 +39,9 @@ public class Speedometer {
 
     public void UpdateSpeedInfo(int speed, int fuel, int hp, int mileage, int engine, int light, int belt, int lock){
         hp= (int) hp/10;
-        mFuel.setText(new Formatter().format("%d", Integer.valueOf(fuel)).toString());
-        mMileage.setText(new Formatter().format("%06d", Integer.valueOf(mileage)).toString());
-        mCarHP.setText(new Formatter().format("%d%s", Integer.valueOf(hp), "%").toString());
+        mFuel.setText(new Formatter(java.util.Locale.US).format("%d", Integer.valueOf(fuel)).toString());
+        mMileage.setText(new Formatter(java.util.Locale.US).format("%06d", Integer.valueOf(mileage)).toString());
+        mCarHP.setText(new Formatter(java.util.Locale.US).format("%d%s", Integer.valueOf(hp), "%").toString());
         mSpeedLine.setProgress(speed);
         mSpeed.setText(String.valueOf(speed));
  
