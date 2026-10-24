@@ -12,11 +12,17 @@ jobs:
         with:
           node-version: 16
           cache: yarn
+      # JDK 17 is only needed by the Android cmdline-tools (sdkmanager)
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      # The app itself must be built with JDK 11 (React Native 0.70 / Gradle 7.5)
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '11'
-      - uses: android-actions/setup-android@v3
       - run: yarn install --frozen-lockfile
       - run: chmod +x android/gradlew
       - name: Build release APK
@@ -26,3 +32,4 @@ jobs:
         with:
           name: ariana-mobile-release
           path: android/app/build/outputs/apk/release/*.apk
+          
