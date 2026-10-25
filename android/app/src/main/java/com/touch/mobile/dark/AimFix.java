@@ -31,8 +31,8 @@ import java.util.Locale;
 public class AimFix {
     private static final float VANILLA_X = 0.530f;
     private static final float VANILLA_Y = 0.400f;
-    private static final float X_ADJUST = -0.010f;
-    private static final float Y_ADJUST = 0.030f;
+    private static final float X_ADJUST = -0.013f;
+    private static final float Y_ADJUST = 0.033f;
 
     // Symbol offsets inside libGTASA.so (from its dynamic symbol table)
     private static final long OFF_MULT_Y = 0x8B07F8L; // CCamera::m_f3rdPersonCHairMultY
